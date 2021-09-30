@@ -1,0 +1,41 @@
+** sudo su yazarak root kullanıcıyı aktif ediyoruz.
+
+pi@raspberry:/ $ sudo su
+
+** boot dizini içerisine wpa_supplicant.conf dosyası oluşturuyoruz.
+
+root@ raspberry:/# cd/boot/
+root@ raspberry:/# touch wpa_supplicant.conf
+
+**Dosya içerisine Raspberry Pi'ın bağlanmasını istediğimiz kablosuz ağları ve parolalarını tanımlayalım.
+**Yapılandırma dosyasında ssid ve psk değerlerini kendinize göre düzenlemelisiniz. ssid seçeneğine kablosuz ağ adını, psk seçeneğine ise ağ parolasını yazın.
+
+root@ raspberry:/boot# nano wpa_supplicant.conf
+country=TR
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+ssid="KABLOSUZ_AGIN_ADI"
+psk="KABLOSUZ_AG_PAROALSI"
+}
+
+**Bu bölümde ise birden fazla kablosuz ağ tanımlanacak ise öncelik (priority) belirteceğiz.
+
+country=TR
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+ssid="KABLOSUZ_AG1"
+psk="KABLOSUZ_AG1_PAROALSI"
+priority=1
+}
+
+network={
+ssid="KABLOSUZ_AG2"
+psk="KABLOSUZ_AG2_PAROALSI"
+priority=2
+}
+
+*** Yapılandırmada Raspberry Pi öncelikle KABLOSUZ_AG2 ağına bağlanmayı deneyecek eğer başarılı olmazsa KABLOSUZ_AG1' e bağlanacaktır. Priority değeri büyük olan önceliklidir.
