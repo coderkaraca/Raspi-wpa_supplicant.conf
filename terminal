@@ -2,15 +2,10 @@
 
 pi@raspberry:/ $ sudo su
 
-** boot dizini içerisine wpa_supplicant.conf dosyası oluşturuyoruz.
-
-root@ raspberry:/# cd/boot/
-root@ raspberry:/# touch wpa_supplicant.conf
-
-**Dosya içerisine Raspberry Pi'ın bağlanmasını istediğimiz kablosuz ağları ve parolalarını tanımlayalım.
 **Yapılandırma dosyasında ssid ve psk değerlerini kendinize göre düzenlemelisiniz. ssid seçeneğine kablosuz ağ adını, psk seçeneğine ise ağ parolasını yazın.
 
-root@ raspberry:/boot# nano wpa_supplicant.conf
+root@ raspberrypi:/home/pi# nano /etc/wpa_supplicant/wpa_supplicant.conf
+
 country=TR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
