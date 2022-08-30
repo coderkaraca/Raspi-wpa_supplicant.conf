@@ -1,10 +1,10 @@
 ** sudo su yazarak root kullanıcıyı aktif ediyoruz.
 
-pi@raspberry:/ $ sudo su
+$ sudo su
 
 **Yapılandırma dosyasında ssid ve psk değerlerini kendinize göre düzenlemelisiniz. ssid seçeneğine kablosuz ağ adını, psk seçeneğine ise ağ parolasını yazın.
 
-root@ raspberrypi:/home/pi# nano /etc/wpa_supplicant/wpa_supplicant.conf
+root@ raspberrypi: /home/pi# nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 country=TR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -15,7 +15,7 @@ ssid="KABLOSUZ_AGIN_ADI"
 psk="KABLOSUZ_AG_PAROALSI"
 }
 
-**Bu bölümde ise birden fazla kablosuz ağ tanımlanacak ise öncelik (priority) belirteceğiz.
+**Bu bölümde birden fazla kablosuz ağ tanımlanacak ise öncelik (priority) belirteceğiz.
 
 country=TR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
