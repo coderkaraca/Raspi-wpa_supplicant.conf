@@ -1,10 +1,6 @@
-** sudo su yazarak root kullanıcıyı aktif ediyoruz.
-
-$ sudo su
-
 **Yapılandırma dosyasında ssid ve psk değerlerini kendinize göre düzenlemelisiniz. ssid seçeneğine kablosuz ağ adını, psk seçeneğine ise ağ parolasını yazın.
 
-root@ raspberrypi: /home/pi# nano /etc/wpa_supplicant/wpa_supplicant.conf
+$ sudo su nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 country=TR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
